@@ -5,12 +5,11 @@ body {
 
 article {
     display: flex;
-    /* flex-wrap: wrap; */
-    flex-direction: column;
+    flex-wrap: wrap;
 }
 
 nav {
-    flex: 1 50px;
+    min-height: 50px;
     background: #5995da;
 }
 
@@ -19,7 +18,6 @@ header {
 }
 
 main {
-    /* flex: 6 300px; */
     padding: 1rem;
     background: #eaedf0;
 }
@@ -51,42 +49,31 @@ header, section, nav {
     align-items: center;
 }
 
+header, section, nav, main {
+    flex: 100%;
+}
 
 @media screen and (min-width: 500px) and (max-width: 899px) {
-    article {
-        flex-flow: row wrap;
-    }
-    nav {
-        flex: 100%;
-        min-height: 50px;
-    }
     section {
         height: 50vw;
+        flex: 50%;
     }
 }
 
 @media screen and (min-width: 900px) {
-    article {
-        flex-flow: row wrap;
+    .feature {
+        flex: calc(100% / 3);
+        min-height: 50vh;
     }
-    nav {
-        flex: 100%;
-        min-height: 50px;
+    #signup {
+        order: 1;
+        min-height: auto;
+        height: 150px; 
     }
-   .feature {
-    flex: calc(100vw / 3);
-    min-height: calc(100vw / 3 * 1.25);
-   }
-   #signup {
-    order: 1;
-    min-height: auto;
-    height: 150px;
-   }
-   header {
-    flex: 100vw;
-    height: 25vw;
-   }
-   main {
-    order: 2;
-   }
+    header {
+        height: 35vh;
+    }
+    main {
+        order: 2;
+    }
 }
